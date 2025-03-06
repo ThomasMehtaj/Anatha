@@ -1,0 +1,39 @@
+/* === Infos pratiques === */
+
+.infos {
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+    background: #F8EDDE;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.infos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.infos li {
+    background: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.infos p {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* === Carte Google Maps === */
+.map {
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+

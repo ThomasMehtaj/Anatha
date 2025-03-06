@@ -1,0 +1,149 @@
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #E8CEB0;
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: auto;
+    gap: 20px;
+}
+
+.intro-text {
+    flex: 1;
+    text-align: left; /* Aligner le texte à gauche */
+    padding-right: 20px; /* Ajouter un espacement entre le texte et le carrousel */
+}
+
+.carousel {
+    flex: 1;
+}
+
+/* HEADER */
+header {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+.logo img {
+    height: 130px;
+    width: 130px;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #e6ccb2;
+    border-radius: 50%;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    background-color: #F8EDDE;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-left: auto;
+}
+.menu li {
+    margin: 0 15px;
+}
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* INTRO */
+.intro {
+    padding: 50px 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+    flex-grow: 1;
+}
+
+/* AVIS */
+.avis {
+    padding: 60px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #F8EDDE;
+    padding: 20px 0;
+    margin-top: auto;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-infos, .footer-menu {
+    text-align: left;
+}
+.footer-menu ul {
+    list-style: none;
+}
+.footer-menu li {
+    margin: 5px 0;
+}
+.footer-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.footer-menu a:hover {
+    color: #d84315;
+}
+
+@media (max-width: 768px) {
+    .container-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        text-align: center; /* Recentre le texte sur mobile */
+        padding-right: 0;
+    }
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center; /* Centre le bouton */
+    margin-top: 10px;
+}
+
+.pause {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}

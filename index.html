@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Anatha</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         * { box-sizing: border-box; margin: 0; padding: 0; }
+        .carousel {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            border: 2px black solid;
+            border-radius: 10px;
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 50px;
+        }
+        .pause {
+            display: block;
+            margin: 10px auto;
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .prev:hover, .next:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+        .prev { left: 10px; display: flex; align-items: center; justify-content: center; }
+        .next { right: 10px; display: flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+    <!-- Conteneur principal du logo et du menu -->
+    <header>
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="IMG-20240422-WA0014.jpg" alt="Logo Anatha">
+            </div>
+    
+            <!-- Menu -->
+            <nav role="navigation" aria-label="Menu principal">
+                <ul class="menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="prestations.html">Prestations</a></li>
+                    <li><a href="infos.html">Infos Pratiques</a></li>
+                    <li><a href="https://reservationbeaute.fr/anatha-31600" target="_blank">Prendre rendez-vous</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="intro container-flex">
+        <div class="intro-text">
+            <h1>Bienvenue chez Anatha</h1>
+            <p>Anatha est un institut de beauté chaleureux où l'on vient lâcher prise.</p>
+        </div>
+        <div class="carousel" aria-label="Diaporama d'images de l'institut">
+            <button class="prev" onclick="prevSlide()" aria-label="Image précédente">&#10094;</button>
+            <div class="carousel-container">
+                <img src="image1.jpeg" alt="Photo de l'institut - Vue intérieure">
+                <img src="image2.jpeg" alt="Photo de l'institut - Salle de soin">
+                <img src="image3.jpeg" alt="Produits de soin disponibles">
+                <img src="image4.jpeg" alt="Détail du mobilier et ambiance">
+            </div>
+            <button class="next" onclick="nextSlide()" aria-label="Image suivante">&#10095;</button>
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="pause" onclick="togglePause()">Pause</button>
+        </div>
+    </section>
+    
+    <section class="avis">
+        <!-- Widget qui intégre les avis de la page google -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-d0957557-2185-435b-8359-c09414753a1b" data-elfsight-app-lazy></div>
+    </section>
+
+    <script>
+        let index = 0;
+        let autoSlideInterval;
+        const totalSlides = document.querySelectorAll(".carousel img").length;
+        const container = document.querySelector(".carousel-container");
+        const pauseButton = document.querySelector(".pause");
+        let isPaused = false;
+
+        function showSlide() {
+            const width = document.querySelector(".carousel").clientWidth;
+            container.style.transform = `translateX(${-index * width}px)`;
+        }
+        function nextSlide() {
+            index = (index + 1) % totalSlides;
+            showSlide();
+        }
+        function prevSlide() {
+            index = (index - 1 + totalSlides) % totalSlides;
+            showSlide();
+        }
+        function autoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+        function togglePause() {
+            if (isPaused) {
+                autoSlide();
+                pauseButton.textContent = "Pause";
+            } else {
+                clearInterval(autoSlideInterval);
+                pauseButton.textContent = "Reprendre";
+            }
+            isPaused = !isPaused;
+        }
+        autoSlide();
+    </script>
+    
+</body>
+
+<footer>
+    <div class="footer-container">
+        <!-- Logo Instagram à gauche -->
+        <div class="footer-logo">
+            <a href="https://www.instagram.com/anathabeaute" target="_blank"><img src="icons8-instagram.svg" alt="Instagram"></a>
+        </div>
+
+        <!-- Infos pratiques au centre -->
+        <div class="footer-infos">
+            <p>Adresse : 3 Rue Emile Dewoitine, 31600 Seysses</p>
+            <p>Téléphone : 06 70 57 84 49</p>
+            <p>Email : anathabeaute@gmail.com</p>
+        </div>
+
+        <!-- Menu en colonne à droite -->
+        <nav class="footer-menu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="prestations.html">Prestations</a></li>
+                <li><a href="infos.html">Infos Pratiques</a></li>
+                <li><a href="https://reservationbeaute.fr/anatha-31600" target="_blank">Prendre rendez-vous</a></li>
+                <li><a href="mentions.html">Mentions légales</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+</body>
+</html>
