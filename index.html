@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="styles.css">
     <style>
          * { box-sizing: border-box; margin: 0; padding: 0; }
-        .carousel {
+        .carousel-wrapper {
             width: 80%;
             max-width: 600px;
             margin: auto;
             overflow: hidden;
             position: relative;
-            border: 2px black solid;
             border-radius: 10px;
+            position: relative;
         }
         .carousel-container {
             display: flex;
@@ -44,14 +44,17 @@
             line-height: 50px;
         }
         .pause {
-            display: block;
-            margin: 10px auto;
-            background: #000;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
+            position: absolute;
+    bottom: 50px; /* Ajuste la position verticale */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Centre le bouton précisément */
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
         }
         .prev:hover, .next:hover {
             background: rgba(255, 255, 255, 0.8);
@@ -87,20 +90,25 @@
             <h1>Bienvenue chez Anatha</h1>
             <p>Anatha est un institut de beauté chaleureux où l'on vient lâcher prise.</p>
         </div>
-        <div class="carousel" aria-label="Diaporama d'images de l'institut">
-            <button class="prev" onclick="prevSlide()" aria-label="Image précédente">&#10094;</button>
-            <div class="carousel-container">
-                <img src="image1.jpeg" alt="Photo de l'institut - Vue intérieure">
-                <img src="image2.jpeg" alt="Photo de l'institut - Salle de soin">
-                <img src="image3.jpeg" alt="Produits de soin disponibles">
-                <img src="image4.jpeg" alt="Détail du mobilier et ambiance">
+        <div class="carousel-wrapper">
+            <div class="carousel" aria-label="Diaporama d'images de l'institut">
+                <button class="prev" onclick="prevSlide()" aria-label="Image précédente">&#10094;</button>
+                <div class="carousel-container">
+                    <img src="image1.jpeg" alt="Photo de l'institut - Vue intérieure">
+                    <img src="image2.jpeg" alt="Photo de l'institut - Salle de soin">
+                    <img src="image3.jpeg" alt="Produits de soin disponibles">
+                    <img src="image4.jpeg" alt="Détail du mobilier et ambiance">
+                </div>
+                <button class="next" onclick="prevSlide()" aria-label="Image suivante">&#10095;</button>
             </div>
-            <button class="next" onclick="nextSlide()" aria-label="Image suivante">&#10095;</button>
+        
+            <div class="carousel-controls">
+                <button class="pause" onclick="togglePause()">Pause</button>
+            </div>
         </div>
         
-        <div class="carousel-controls">
-            <button class="pause" onclick="togglePause()">Pause</button>
-        </div>
+        
+        
     </section>
     
     <section class="avis">
