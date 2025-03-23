@@ -10,7 +10,7 @@
         .carousel-wrapper {
             width: 80%;
             max-width: 600px;
-            margin: auto;
+            margin: 25px;
             overflow: hidden;
             position: relative;
             border-radius: 10px;
@@ -45,16 +45,16 @@
         }
         .pause {
             position: absolute;
-    bottom: 50px; /* Ajuste la position verticale */
-    left: 50%; /* Centre horizontalement */
-    transform: translateX(-50%); /* Centre le bouton précisément */
-    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
+            bottom: 50px; /* Ajuste la position verticale */
+            left: 50%; /* Centre horizontalement */
+            transform: translateX(-50%); /* Centre le bouton précisément */
+            background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
         }
         .prev:hover, .next:hover {
             background: rgba(255, 255, 255, 0.8);
@@ -64,14 +64,10 @@
         .next { right: 10px; display: flex; align-items: center; justify-content: center; }
     </style>
 </head>
-<body>
+<body class="home">
     <!-- Conteneur principal du logo et du menu -->
     <header>
         <div class="container">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="IMG-20240422-WA0014.jpg" alt="Logo Anatha">
-            </div>
     
             <!-- Menu -->
             <nav role="navigation" aria-label="Menu principal">
@@ -86,10 +82,18 @@
     </header>
     
     <section class="intro container-flex">
-        <div class="intro-text">
-            <h1>Bienvenue chez Anatha</h1>
-            <p>Anatha est un institut de beauté chaleureux où l'on vient lâcher prise.</p>
+        <div class="logo-container">
+            <div class="logo">
+                <img class="home-logo" src="IMG-20240422-WA0014.jpg" alt="Logo Anatha">
+                <div class="logo-content">
+                    <h1 class="logo-text">Bienvenue chez Anatha</h1>
+                    <p class="logo-paragraph">
+                        Votre havre de bien-être et de beauté. Jennifer et Alya vous accueillent dans un cadre chaleureux et apaisant, dédié a la détente et à la mise en valeur de votre beauté naturelle. Laisser vous choyer par des soins sur mesure, alliant expertise et douceur, pour une parenthèse de de sérénité rien que pour vous. Que ce soit pour un soin du visage, un massage relaxant ou une mise en beauté, nous sommes là pour prendre soin de vous. Offrez vous un moment d'évasion et de bien être... Vous le méritez !
+                    </p>
+                </div>
+            </div>
         </div>
+        
         <div class="carousel-wrapper">
             <div class="carousel" aria-label="Diaporama d'images de l'institut">
                 <button class="prev" onclick="prevSlide()" aria-label="Image précédente">&#10094;</button>
@@ -106,15 +110,12 @@
                 <button class="pause" onclick="togglePause()">Pause</button>
             </div>
         </div>
-        
-        
-        
     </section>
     
     <section class="avis">
         <!-- Widget qui intégre les avis de la page google -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-d0957557-2185-435b-8359-c09414753a1b" data-elfsight-app-lazy></div>
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-d0957557-2185-435b-8359-c09414753a1b" data-elfsight-app-lazy></div>
     </section>
 
     <script>
@@ -157,22 +158,20 @@
 
 <footer>
     <div class="footer-container">
-        <!-- Logo Instagram à gauche -->
         <div class="footer-logo">
-            <a href="https://www.instagram.com/anathabeaute" target="_blank"><img src="icons8-instagram.svg" alt="Instagram"></a>
+            <a href="https://www.instagram.com/anathabeaute" target="_blank"><img class='social-icons' src="instagram_1384063.png" alt="Instagram"></a>
+            <a href="https://www.instagram.com/anathabeaute" target="_blank"><img class='social-icons' src="facebook_1384053.png" alt="Facebook"></a>
         </div>
 
-        <!-- Infos pratiques au centre -->
-        <div class="footer-infos">
-            <p>Adresse : 3 Rue Emile Dewoitine, 31600 Seysses</p>
-            <p>Téléphone : 06 70 57 84 49</p>
-            <p>Email : anathabeaute@gmail.com</p>
-        </div>
+        <address>
+            <p><strong>Adresse :</strong> 3 Rue Emile Dewoitine, 31600 Seysses</p>
+            <p><strong>Téléphone :</strong> 06 70 57 84 49</p>
+            <p><strong>Email :</strong> anathabeaute@gmail.com</p>
+        </address>
 
-        <!-- Menu en colonne à droite -->
         <nav class="footer-menu">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" aria-current="page">Accueil</a></li>
                 <li><a href="prestations.html">Prestations</a></li>
                 <li><a href="infos.html">Infos Pratiques</a></li>
                 <li><a href="https://reservationbeaute.fr/anatha-31600" target="_blank">Prendre rendez-vous</a></li>

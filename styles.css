@@ -32,49 +32,199 @@ body {
 
 .carousel {
     flex: 1;
+    margin-left: auto;
 }
 
 /* HEADER */
 header {
     padding: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
-    padding: 20px;
+    background-color: #E8CEB0; /* Même couleur que le fond ou ajustez selon vos préférences */
 }
+
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espace entre le logo et le menu */
     align-items: center;
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-.logo img {
-    height: 130px;
-    width: 130px;
-    border: 2px solid black;
-    padding: 10px;
-    background-color: #e6ccb2;
-    border-radius: 50%;
+
+/* Style de la navigation */
+nav {
+    flex: 0 0 auto; /* Ne pas étirer la navigation */
+    margin-left: auto; /* Force la navigation à droite */
 }
+
+/* Style de base pour le menu */
 .menu {
-    list-style: none;
     display: flex;
-    background-color: #F8EDDE;
-    padding: 15px 30px;
-    border-radius: 10px;
-    border: 2px solid black;
-    margin-left: auto;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
 }
+
+/* Style des éléments de liste */
 .menu li {
-    margin: 0 15px;
+    position: relative;
 }
-.menu a {
+
+/* Style des liens */
+.menu li a {
+    display: block;
+    color: #333;/* Style de base pour l'en-tête sur toutes les pages */
+
+header {
+    padding: 20px 0;
+    width: 100%;
+}
+
+/* Container par défaut (pour toutes les pages sauf accueil) */
+.container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Style du logo par défaut (pour toutes les pages sauf accueil) */
+.logo {
+    flex: 0 0 auto;
+}
+
+/* Style spécifique pour le logo des pages secondaires */
+.page-logo {
+    max-height: 60px; /* Logo plus petit sur les pages secondaires */
+    width: auto;
+    border-radius: 50%; /* Garde la forme ronde */
+    border: 1px solid #D4AF37; /* Bordure plus fine */
+}
+
+/* Style de la navigation par défaut (pour toutes les pages sauf accueil) */
+nav {
+    flex: 1;
+    margin-left: 30px; /* Espace entre le logo et le menu */
+}
+
+/* Style du menu par défaut (pour toutes les pages sauf accueil) */
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style pour la page d'accueil uniquement */
+body.home header .container {
+    justify-content: space-between; /* Espace entre le logo et le menu sur la page d'accueil */
+}
+
+body.home nav {
+    margin-left: auto; /* Force le menu à droite sur la page d'accueil */
+}
+
+body.home .logo img {
+    /* Styles spécifiques pour le logo de la page d'accueil */
+    width: 400px;
+    height: 400px;
+    border: 3px solid #D4AF37;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+/* Version responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    nav {
+        margin: 15px 0 0 0; /* Réinitialise la marge en mode mobile */
+        width: 100%;
+    }
+    
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu li:last-child a {
+        border-radius: 0 0 5px 5px;
+    }
+    
+    /* Ajustements spécifiques pour la page d'accueil en mode mobile */
+    body.home .logo img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    padding: 15px 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
+
+/* Effet au survol */
+.menu li a:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+/* Style spécial pour le lien "Prendre rendez-vous" */
+.menu li:last-child a {
+    background-color: #D4AF37;
+    border-radius: 0 5px 5px 0;
+}
+
+.menu li:last-child a:hover {
+    background-color: #F8EDDE;
+}
+
+/* Version responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    nav {
+        margin: 15px 0 0 0; /* Réinitialise la marge en mode mobile */
+        width: 100%;
+    }
+    
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu li:last-child a {
+        border-radius: 0 0 5px 5px;
+    }
+}
+
 
 /* INTRO */
 .intro {
@@ -188,4 +338,80 @@ footer {
     .carousel-controls {
         margin-top: 10px;
     }
+}
+
+.logo-container {
+    width: 100%;
+    max-width: 800px; /* Ajustez selon vos besoins */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    position: relative;
+    width: 100%;
+    min-height: 500px; /* Hauteur minimale pour contenir le texte */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Taille de l'image */
+    height: 400px;
+    border: 3px solid #D4AF37;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.7; /* Rend l'image semi-transparente pour améliorer la lisibilité du texte */
+}
+
+.logo-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #D4AF37;
+    margin-bottom: 20px;
+
+}
+
+.logo-paragraph {
+    font-size: 28px; /* Taille réduite pour une meilleure lisibilité */
+    line-height: 1.8;
+    color: black;
+    max-width: 700px; /* Limite la largeur du texte */
+    margin: 0 auto;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+.social-icons {
+    width: 90px; /* Réduit la largeur */
+    height:90px;/* Réduit la hauteur */
+    margin: 10px;
+}
+
+.page-logo {
+    width: 150px; /* Réduit la largeur */
+    height: 150px; /* Réduit la hauteur */
+    margin: 10px;
+    border-radius: 50%
 }

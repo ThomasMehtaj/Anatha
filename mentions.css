@@ -27,3 +27,12 @@ body {
     font-size: 18px;
     margin-top: 15px;
 }
+
+.logo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
