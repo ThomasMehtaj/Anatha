@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 80px; /* Ajustez cette valeur en fonction de la hauteur de votre en-tête */
 }
 
 .container-flex {
@@ -37,7 +38,6 @@ body {
 
 /* HEADER */
 header {
-    padding: 20px 0;
     width: 100%;
     background-color: #E8CEB0; /* Même couleur que le fond ou ajustez selon vos préférences */
 }
@@ -46,9 +46,7 @@ header {
     display: flex;
     justify-content: space-between; /* Espace entre le logo et le menu */
     align-items: center;
-    width: 80%;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 90%;
 }
 
 /* Style de la navigation */
@@ -63,7 +61,7 @@ nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #F8EDDE;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     font-family: 'Arial', sans-serif;
@@ -96,14 +94,6 @@ header {
 /* Style du logo par défaut (pour toutes les pages sauf accueil) */
 .logo {
     flex: 0 0 auto;
-}
-
-/* Style spécifique pour le logo des pages secondaires */
-.page-logo {
-    max-height: 60px; /* Logo plus petit sur les pages secondaires */
-    width: auto;
-    border-radius: 50%; /* Garde la forme ronde */
-    border: 1px solid #D4AF37; /* Bordure plus fine */
 }
 
 /* Style de la navigation par défaut (pour toutes les pages sauf accueil) */
@@ -241,33 +231,52 @@ body.home .logo img {
 }
 
 /* FOOTER */
-footer {
-    background-color: #F8EDDE;
-    padding: 20px 0;
-    margin-top: auto;
-}
 .footer-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Alignement vertical */
+    width: 100%;
+    padding: 20px;
+    background-color: #f8f1e7; /* Ajuste si besoin */
 }
-.footer-infos, .footer-menu {
+
+.footer-logo {
+    flex: 1; /* Permet d'occuper l'espace gauche */
     text-align: left;
 }
+
+.footer-logo a {
+    margin-right: 10px; /* Espacement entre les icônes */
+}
+
+address {
+    flex: 1; /* Centre le texte */
+    text-align: center;
+}
+
+.footer-menu {
+    flex: 1; /* Garde l'espace à droite */
+    text-align: right;
+}
+
 .footer-menu ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Passe le menu en colonne */
+    align-items: center; /* Aligne les liens à droite */
+    gap: 10px; /* Espacement entre les éléments */
 }
-.footer-menu li {
-    margin: 5px 0;
+
+.footer-menu ul li {
+    display: inline;
 }
+
 .footer-menu a {
     text-decoration: none;
-    color: #333;
+    color: black;
     font-weight: bold;
-}
-.footer-menu a:hover {
-    color: #d84315;
 }
 
 @media (max-width: 768px) {
@@ -357,7 +366,7 @@ footer {
     align-items: center;
 }
 
-.logo img {
+.home-logo {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -410,8 +419,18 @@ footer {
 }
 
 .page-logo {
-    width: 150px; /* Réduit la largeur */
-    height: 150px; /* Réduit la hauteur */
-    margin: 10px;
-    border-radius: 50%
+    border-radius: 50%;
+    position: relative;
+    border: #D4AF37 2px solid;
+    width: 200px;
+    height: 200px;
 }
+header {
+    padding: 20px 0;
+    width: 100%;
+    margin-top: -20px; /* Marge négative pour remonter l'en-tête */
+}
+.header-ajustments{
+    margin-top: -200px;
+}
+
