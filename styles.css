@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 80px; /* Ajustez cette valeur en fonction de la hauteur de votre en-tête */
+    padding-top: 80px; 
 }
 
 .container-flex {
@@ -137,6 +137,8 @@ body.home .logo img {
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
+        display: flex;
+        justify-content: center;
     }
     
     nav {
@@ -188,33 +190,6 @@ body.home .logo img {
     background-color: #F8EDDE;
 }
 
-/* Version responsive */
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    nav {
-        margin: 15px 0 0 0; /* Réinitialise la marge en mode mobile */
-        width: 100%;
-    }
-    
-    .menu {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    
-    .menu li {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .menu li:last-child a {
-        border-radius: 0 0 5px 5px;
-    }
-}
-
 
 /* INTRO */
 .intro {
@@ -228,6 +203,7 @@ body.home .logo img {
 /* AVIS */
 .avis {
     padding: 60px;
+    margin-bottom: 120px;
 }
 
 /* FOOTER */
@@ -279,18 +255,6 @@ address {
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
-    .container-flex {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-text {
-        text-align: center; /* Recentre le texte sur mobile */
-        padding-right: 0;
-    }
-}
-
 .carousel-controls {
     display: flex;
     justify-content: center; /* Centre le bouton */
@@ -330,23 +294,6 @@ address {
 .pause:hover {
     background: rgba(255, 255, 255, 0.8);
     color: black;
-}
-
-/* Ajustement pour mobile */
-@media (max-width: 768px) {
-    .container-flex {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-text {
-        text-align: center;
-        padding-right: 0;
-    }
-
-    .carousel-controls {
-        margin-top: 10px;
-    }
 }
 
 .logo-container {
@@ -434,3 +381,122 @@ header {
     margin-top: -200px;
 }
 
+@media (max-width: 768px) {
+    .container{
+        margin: auto;
+    }
+
+    .intro {
+        margin: 20px auto;
+        border-radius: 10px;
+        width: 80%;
+        flex-grow: 1;
+    }
+    
+    .menu {
+        flex-direction: column;
+    align-items: center;
+    background-color: #f8f0e5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+      }
+    
+      .menu a {
+        margin: 10px 0;
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu li:last-child a {
+        border-radius: 0 0 5px 5px;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .logo-text {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .logo-paragraph {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .logo-container {
+        width: 100%;
+    max-width: 800px; /* Ajustez selon vos besoins */
+    margin: 0 auto;
+    }
+
+    .container nav {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-logo,
+    address,
+    .footer-menu {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0 0 0;
+        width: 100%;
+        align-items: center;
+    }
+    
+    body.home .logo img {
+        /* Styles spécifiques pour le logo de la page d'accueil */
+        width: 300px;
+        height: 300px;
+        border: 3px solid #D4AF37;
+        border-radius: 50%;
+        object-fit: cover;
+        opacity: 0.4;
+    }
+    
+    .social-icons {
+        width: 80px; /* Réduit la largeur */
+        height:80px;/* Réduit la hauteur */
+        margin: 10px;
+    }
+    
+}
