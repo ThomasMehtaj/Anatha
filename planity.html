@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="planity.css">
+    <title>Prendre rendez-vous - Anatha</title>
+</head>
+<body class="header-ajustments">
+    <header>
+        <div class="container">
+    
+            <!-- Menu -->
+            <nav role="navigation" aria-label="Menu principal">
+                <ul class="menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="prestations.html">Prestations</a></li>
+                    <li><a href="infos.html">Infos Pratiques</a></li>
+                    <li><a href="planity.html" target="_blank">Prendre un RDV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="$myContainerId"></div>
+<script>
+    var container = document.getElementById('$myContainerId');
+    window.planity = {
+        key: '-NoRmiQp4b9DdbJjABHI',
+        primaryColor: '$primaryColor',
+        // choisissez une des options ci-dessous
+        container: container,
+        // accountContainer: container,
+        // appointmentContainer: container,
+        // giftVoucherContainer: container,
+        // onlineShopContainer: container
+    };
+</script>
+<script src="https://d2skjte8udjqxw.cloudfront.net/widget/production/2/polyfills.latest.js"></script>
+<script src="https://d2skjte8udjqxw.cloudfront.net/widget/production/2/app.latest.js"></script>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="https://www.instagram.com/anathabeaute" target="_blank"><img class='social-icons' src="instagram_1384063.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/profile.php?id=61554261724123&rdid=HeWmTYSEyyxmEzRb#" target="_blank"><img class='social-icons' src="facebook_1384053.png" alt="Facebook"></a>
+        </div>
+
+        <address>
+            <p><strong>Adresse :</strong> 3 Rue Emile Dewoitine, 31600 Seysses</p>
+            <p><strong>Téléphone :</strong> 06 70 57 84 49</p>
+            <p><strong>Email :</strong> anathabeaute@gmail.com</p>
+        </address>
+
+        <nav class="footer-menu">
+            <ul>
+                <li><a href="index.html" aria-current="page">Accueil</a></li>
+                <li><a href="prestations.html">Prestations</a></li>
+                <li><a href="infos.html" aria-current="page">Infos Pratiques</a></li>
+                <li><a href="https://reservationbeaute.fr/anatha-31600" target="_blank">Prendre rendez-vous</a></li>
+                <li><a href="mentions.html">Mentions légales</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+</body>
+</html>
