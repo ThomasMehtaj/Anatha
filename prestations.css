@@ -8,47 +8,50 @@ h1 {
 }
 
 .prestations {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: auto;
-    margin-bottom: 120px
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  gap: 30px; /* aucun espace entre les cartes */
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 120px;
+}
+
   
   .card {
-    background: #FAF3E0;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 370px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
+  background: #FAF3E0;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 450px; /* fixe la hauteur */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0; /* plus de padding autour */
+  overflow: hidden;
+  box-sizing: border-box;
+}
   
   .card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
+  width: 100%;
+  height: 85%; /* occupe la majeure partie de la carte */
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  display: block;
+}
   
-  .card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #2C2C2C;
-    margin: 0 0 10px;
-  }
-  
-  .card p {
-    font-size: 15px;
-    color: #444;
-    text-align: justify;
-    line-height: 1.8;
-    flex-grow: 1; /* ← ici le texte pousse le reste */
-  }
+ .card h3 {
+  height: 15%; /* prend la fin de la carte */
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2C2C2C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF3E0;
+}
   
 
 
